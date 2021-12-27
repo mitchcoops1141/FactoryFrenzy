@@ -5,8 +5,6 @@ using UnityEngine;
 public class GridManager : MonoBehaviour
 {
     [SerializeField] private GameObject cell;
-    [SerializeField] private int cellWidth = 1;
-    [SerializeField] private int cellHeight = 1;
 
     [SerializeField] private int gridWidth;
     [SerializeField] private int gridHeight;
@@ -19,7 +17,7 @@ public class GridManager : MonoBehaviour
         {
             for (int z = 0; z < gridHeight; z++)
             {
-                cacheCell = Instantiate(cell);
+                cacheCell = Instantiate(cell, this.transform);
                 cacheCell.transform.position = new Vector3(x, 0, -z);
             }
         }
@@ -30,6 +28,7 @@ public class GridManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //shoot a ray with layercast to hit on grid cells
+        //get grid cell
     }
 }
